@@ -1,13 +1,11 @@
 CC=/usr/bin/gcc
 LD=/usr/bin/gcc
 
-all: k16-assembler
+all: emulator
 
-k16-assembler: bin/assembler.o
-	$(LD) bin/assembler.o -o k16-assembler
+emulator: bin/emulator.o
+	$(LD) bin/emulator.o -o emulator
 
-bin/assembler.o: src/assembler.c
-	$(CC) -c src/assembler.c -o bin/assembler.o
+bin/emulator.o: src/emulator.c
+	$(CC) -c src/emulator.c -o bin/emulator.o
 
-clean:
-	rm k16-assembler bin/assembler.o
